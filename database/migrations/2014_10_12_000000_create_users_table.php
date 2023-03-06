@@ -52,6 +52,13 @@ class CreateUsersTable extends Migration
 
             $table->timestamps();
         });
+
+        Schema::create('institue_branch_admin', function (Blueprint $table) {
+            $table->id();
+            $table->bigInteger('institue_branches_id')->nullable();
+            $table->bigInteger('users_id')->nullable();
+            $table->timestamps();
+        });
     }
 
     /**
