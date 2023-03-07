@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class AssetShop extends Model
 {
     use HasFactory;
+
+    public function assets()
+    {
+        return $this->belongsToMany(BranchAsset::class);
+    }
+
 }

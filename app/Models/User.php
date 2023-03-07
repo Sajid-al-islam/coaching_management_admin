@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Institute\InstituteBranch;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -43,6 +44,11 @@ class User extends Authenticatable
     public function roles()
     {
         return $this->belongsToMany(UserRole::class, 'user_user_role', 'user_id', 'user_role_id', 'id', 'role_serial');
+    }
+
+    public function branch_admin()
+    {
+        return $this->belongsToMany(InstituteBranch::class);
     }
 
     public function permissions()
