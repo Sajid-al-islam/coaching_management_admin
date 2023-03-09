@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class InstituteClassBatchTimeSchedule extends Model
 {
     use HasFactory;
+
+
+    public function batch()
+    {
+        return $this->belongsToMany(InstituteClassBatch::class);
+    }
 }

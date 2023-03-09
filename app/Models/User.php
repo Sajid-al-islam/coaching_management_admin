@@ -51,6 +51,7 @@ class User extends Authenticatable
         return $this->belongsToMany(InstituteBranch::class);
     }
 
+
     public function permissions()
     {
         return $this->belongsToMany(UserPermission::class, 'user_user_permission', 'user_id', 'user_permission_id', 'id', 'permission_serial'); //user::id

@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class InstituteTeacher extends Model
 {
     use HasFactory;
+
+    public function branch()
+    {
+        return $this->belongsToMany(InstituteBranch::class);
+    }
+
+    public function batch()
+    {
+        return $this->belongsToMany(InstituteClassBatch::class);
+    }
 }
