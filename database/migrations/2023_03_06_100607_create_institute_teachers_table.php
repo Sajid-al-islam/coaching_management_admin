@@ -20,11 +20,12 @@ class CreateInstituteTeachersTable extends Migration
             $table->date('hire_date')->nullable();
             $table->bigInteger('creator',)->unsigned()->nullable();
             $table->string('slug',50)->nullable();
-            $table->tinyInteger('status',)->nullable()->default('1');
+            $table->tinyInteger('status')->nullable()->default('1');
             $table->timestamps();
         });
 
         Schema::create('institute_branch_institute_teacher', function (Blueprint $table) {
+            $table->id();
             $table->bigInteger('institute_branches_id')->unsigned()->nullable();
             $table->bigInteger('institute_teachers_id')->unsigned()->nullable();
         });
@@ -38,5 +39,6 @@ class CreateInstituteTeachersTable extends Migration
     public function down()
     {
         Schema::dropIfExists('institute_teachers');
+        Schema::dropIfExists('institute_branch_institute_teacher');
     }
 }

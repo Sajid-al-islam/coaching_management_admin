@@ -17,13 +17,14 @@ class CreateInstitueBranchesTable extends Migration
 			$table->string('zip_code', 50)->nullable();
 			$table->string('country', 50)->nullable();
 			$table->bigInteger('institute_classes_id',)->unsigned();
-			$table->bigInteger('creator',)->unsigned()->nullable();
+			$table->bigInteger('creator')->unsigned()->nullable();
 			$table->string('slug', 50)->nullable();
-			$table->tinyInteger('status',)->nullable()->default('1');
+			$table->tinyInteger('status')->nullable()->default('1');
 			$table->timestamps();
 		});
 
 		Schema::create('institue_branch_admin', function (Blueprint $table) {
+			$table->id();
 			$table->bigInteger('institue_branches_id')->unsigned();
 			$table->bigInteger('users_id')->unsigned();
 		});
@@ -32,5 +33,6 @@ class CreateInstitueBranchesTable extends Migration
 	public function down()
 	{
 		Schema::dropIfExists('institue_branches');
+		Schema::dropIfExists('institue_branch_admin');
 	}
 }

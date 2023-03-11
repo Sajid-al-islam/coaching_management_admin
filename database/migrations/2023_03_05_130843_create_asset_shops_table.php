@@ -21,9 +21,10 @@ class CreateAssetShopsTable extends Migration
             $table->timestamps();
         });
 
-        Schema::create('branch_assets_has_asset_shops', function (Blueprint $table) {
-            $table->bigInteger('branch_assets_id',)->unsigned();
-            $table->bigInteger('asset_shops_id',)->unsigned();
+        Schema::create('asset_shop_branch_asset', function (Blueprint $table) {
+            $table->id();
+            $table->bigInteger('branch_asset_id')->unsigned();
+            $table->bigInteger('asset_shop_id')->unsigned();
         });
     }
 
@@ -35,5 +36,6 @@ class CreateAssetShopsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('asset_shops');
+        Schema::dropIfExists('asset_shop_branch_asset');
     }
 }

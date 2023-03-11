@@ -16,7 +16,7 @@ class CreateAssetCategoriesTable extends Migration
         Schema::create('asset_categories', function (Blueprint $table) {
             $table->id();
             $table->string('title',45)->nullable();
-            $table->bigInteger('parent',)->nullable();
+            $table->bigInteger('parent')->nullable();
             $table->timestamps();
         });
     }

@@ -17,13 +17,15 @@ class CreateInstituteClassBatchTimeSchedulesTable extends Migration
             $table->id();
             $table->string('day',45)->nullable();
             $table->time('time')->nullable();
-            $table->bigInteger('institute_class_institute_class_subject_id')->nullable();
-            $table->bigInteger('institute_class_institute_class_subject_institute_classes_id')->unsigned()->nullable();
-            $table->bigInteger('institute_class_institute_class_subject_institute_class_subjects_id')->unsigned()->nullable();
+            $table->string('room', 20)->nullable();
+            $table->bigInteger('institute_class_subject_id')->nullable();
+            $table->bigInteger('institute_class_subject_institute_classes_id')->unsigned()->nullable();
+            $table->bigInteger('institute_class_subject_institute_class_subjects_id')->unsigned()->nullable();
             $table->timestamps();
         });
 
         Schema::create('institute_class_batche_institute_class_batch_time_schedule', function (Blueprint $table) {
+            $table->id();
             $table->bigInteger('institute_class_batches_id')->unsigned();
             $table->bigInteger('institute_class_batch_time_schedules_id')->unsigned();
         });
@@ -37,5 +39,6 @@ class CreateInstituteClassBatchTimeSchedulesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('institute_class_batch_time_schedules');
+        Schema::dropIfExists('institute_class_batche_institute_class_batch_time_schedule');
     }
 }

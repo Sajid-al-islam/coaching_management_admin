@@ -20,6 +20,7 @@ class CreateInstituteClassSubjectsTable extends Migration
         });
 
         Schema::create('institute_class_institute_class_subject', function (Blueprint $table) {
+            $table->id();
             $table->bigInteger('institute_classes_id')->unsigned();
             $table->bigInteger('institute_class_subjects_id')->unsigned();
             $table->string('institute_class_institute_class_subject_id',45)->nullable();
@@ -34,5 +35,6 @@ class CreateInstituteClassSubjectsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('institute_class_subjects');
+        Schema::dropIfExists('institute_class_institute_class_subject');
     }
 }

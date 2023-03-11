@@ -15,6 +15,6 @@ class BranchAsset extends Model
     }
     public function shops()
     {
-        return $this->belongsToMany(BranchAsset::class);
+        return $this->belongsToMany(AssetShop::class);
     }
 }

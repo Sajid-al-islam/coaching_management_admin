@@ -13,6 +13,7 @@ class CreateBranchAssetsTable extends Migration
             $table->bigInteger('branch_id',)->nullable();
             $table->bigInteger('asset_category_id',)->nullable();
             $table->float('purchase_price')->nullable();
+            $table->tinyText('name')->nullable();
             $table->float('depreciation_price')->nullable();
             $table->text('details')->nullable();
             $table->timestamps();

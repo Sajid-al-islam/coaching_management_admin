@@ -22,7 +22,7 @@ class CreateInstituteBranchContactsTable extends Migration
             $table->string('phone_number',45)->nullable();
             $table->bigInteger('creator',)->unsigned()->nullable();
             $table->string('slug',50)->nullable();
-            $table->tinyInteger('status',)->nullable()->default('1');
+            $table->tinyInteger('status')->nullable()->default('1');
             $table->timestamps();
         });
     }

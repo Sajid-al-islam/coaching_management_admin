@@ -17,7 +17,6 @@ class CreateProductOrdersTable extends Migration
             $table->bigInteger('users_id',)->unsigned();
             $table->bigInteger('creator')->nullable();
             $table->string('slug',100)->nullable();
-            $table->integer('status')->default(1);
             $table->timestamps();
         });
     }

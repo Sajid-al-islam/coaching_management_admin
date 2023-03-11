@@ -20,8 +20,6 @@ class CreateInstituteStudentsTable extends Migration
             $table->bigInteger('creator',)->unsigned()->nullable();
             $table->string('slug',50)->nullable();
             $table->tinyInteger('status',)->nullable()->default('1');
-            $table->timestamp('created_at')->nullable();
-            $table->timestamp('updated_at')->nullable();
             $table->timestamps();
         });
     }

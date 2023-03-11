@@ -21,11 +21,13 @@ class CreateInstituteClassBatchesTable extends Migration
         });
 
         Schema::create('institute_class_batch_institute_teacher', function (Blueprint $table) {
+            $table->id();
             $table->bigInteger('institute_class_batches_id',)->unsigned()->nullable();
             $table->bigInteger('institute_teachers_id',)->unsigned()->nullable();
         });
 
         Schema::create('institute_class_batch_institute_student', function (Blueprint $table) {
+            $table->id();
             $table->bigInteger('institute_class_batches_id',)->unsigned()->nullable();
             $table->bigInteger('institute_students_id',)->unsigned()->nullable();
         });
@@ -39,5 +41,7 @@ class CreateInstituteClassBatchesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('institute_class_batches');
+        Schema::dropIfExists('institute_class_batch_institute_teacher');
+        Schema::dropIfExists('institute_class_batch_institute_student');
     }
 }

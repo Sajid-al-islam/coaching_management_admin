@@ -15,7 +15,6 @@ class CreateCrmSmsHistoriesTable extends Migration
     {
         Schema::create('crm_sms_histories', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('id',)->unsigned();
             $table->bigInteger('topics_id')->nullable();
             $table->bigInteger('customer_id')->nullable();
             $table->text('description')->nullable();

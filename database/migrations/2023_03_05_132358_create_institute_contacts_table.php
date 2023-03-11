@@ -32,6 +32,6 @@ class CreateInstituteContactsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('institute_branch_contacts');
+        Schema::dropIfExists('institute_contacts');
     }
 }
