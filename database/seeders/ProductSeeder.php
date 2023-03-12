@@ -67,6 +67,7 @@ class ProductSeeder extends Seeder
 
         $this->call([
             ProductSupplierSeeder::class,
+            ProductOrderSeeder::class,
         ]);
     }
 }

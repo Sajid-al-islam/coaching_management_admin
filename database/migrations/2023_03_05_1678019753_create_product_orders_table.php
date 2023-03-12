@@ -14,7 +14,7 @@ class CreateProductOrdersTable extends Migration
             $table->float('total_amount')->nullable();
             $table->float('paid_amount')->nullable();
             $table->string('status', 45)->nullable();
-            $table->bigInteger('users_id',)->unsigned();
+            $table->bigInteger('user_id',)->unsigned();
             $table->bigInteger('creator')->nullable();
             $table->timestamps();
         });

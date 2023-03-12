@@ -10,7 +10,8 @@ class CreateProductOrderDetailsTable extends Migration
     {
         Schema::create('product_order_details', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('product_id',)->nullable();
+            $table->bigInteger('product_id')->nullable();
+            $table->bigInteger('order_id')->nullable();
             $table->integer('qty',)->nullable();
             $table->integer('price',)->nullable();
             $table->float('discount')->nullable();
