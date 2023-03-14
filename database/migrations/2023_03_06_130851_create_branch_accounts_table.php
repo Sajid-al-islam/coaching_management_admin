@@ -18,6 +18,9 @@ class CreateBranchAccountsTable extends Migration
             $table->bigInteger('branch_id',)->nullable();
             $table->string('title',45)->nullable();
             $table->text('description')->nullable();
+            $table->string('account_no', 40)->nullable();
+            $table->string('account_mobile_no', 40)->nullable();
+            $table->string('account_email', 50)->nullable();
             $table->timestamps();
         });
     }
